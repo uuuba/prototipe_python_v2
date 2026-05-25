@@ -1,0 +1,1622 @@
+[
+  {
+    "id": "m1",
+    "sport": "⚽ Футбол",
+    "home": "Динамо Київ",
+    "away": "Шахтар",
+    "date": "2025-06-14",
+    "time": "18:00",
+    "stadium": "НСК Олімпійський",
+    "city": "Київ",
+    "category": "Прем'єр-ліга",
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A6",
+        "row": "A",
+        "number": 6,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A7",
+        "row": "A",
+        "number": 7,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A8",
+        "row": "A",
+        "number": 8,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B6",
+        "row": "B",
+        "number": 6,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B7",
+        "row": "B",
+        "number": 7,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B8",
+        "row": "B",
+        "number": 8,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C6",
+        "row": "C",
+        "number": 6,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C7",
+        "row": "C",
+        "number": 7,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C8",
+        "row": "C",
+        "number": 8,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D6",
+        "row": "D",
+        "number": 6,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D7",
+        "row": "D",
+        "number": 7,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D8",
+        "row": "D",
+        "number": 8,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E6",
+        "row": "E",
+        "number": 6,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E7",
+        "row": "E",
+        "number": 7,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E8",
+        "row": "E",
+        "number": 8,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F6",
+        "row": "F",
+        "number": 6,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F7",
+        "row": "F",
+        "number": 7,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F8",
+        "row": "F",
+        "number": 8,
+        "zone": "C",
+        "booked": true
+      }
+    ],
+    "price_zones": {
+      "A": 800,
+      "B": 500,
+      "C": 250
+    }
+  },
+  {
+    "id": "m2",
+    "sport": "🏀 Баскетбол",
+    "home": "Будівельник",
+    "away": "Київ-Баскет",
+    "date": "2025-06-18",
+    "time": "19:30",
+    "stadium": "Палац спорту",
+    "city": "Київ",
+    "category": "Суперліга",
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      }
+    ],
+    "price_zones": {
+      "A": 600,
+      "B": 350,
+      "C": 150
+    }
+  },
+  {
+    "id": "m3",
+    "sport": "⚽ Футбол",
+    "home": "Карпати",
+    "away": "Металіст",
+    "date": "2025-06-21",
+    "time": "17:00",
+    "stadium": "Арена Львів",
+    "city": "Львів",
+    "category": "Прем'єр-ліга",
+    "price_zones": {
+      "A": 700,
+      "B": 400,
+      "C": 200
+    },
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A6",
+        "row": "A",
+        "number": 6,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A7",
+        "row": "A",
+        "number": 7,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A8",
+        "row": "A",
+        "number": 8,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B6",
+        "row": "B",
+        "number": 6,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B7",
+        "row": "B",
+        "number": 7,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B8",
+        "row": "B",
+        "number": 8,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C6",
+        "row": "C",
+        "number": 6,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C7",
+        "row": "C",
+        "number": 7,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C8",
+        "row": "C",
+        "number": 8,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D6",
+        "row": "D",
+        "number": 6,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D7",
+        "row": "D",
+        "number": 7,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D8",
+        "row": "D",
+        "number": 8,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E6",
+        "row": "E",
+        "number": 6,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E7",
+        "row": "E",
+        "number": 7,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E8",
+        "row": "E",
+        "number": 8,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F6",
+        "row": "F",
+        "number": 6,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F7",
+        "row": "F",
+        "number": 7,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F8",
+        "row": "F",
+        "number": 8,
+        "zone": "C",
+        "booked": true
+      }
+    ]
+  },
+  {
+    "id": "m4",
+    "sport": "🏐 Волейбол",
+    "home": "Барком-Кажани",
+    "away": "Решетилівка",
+    "date": "2025-06-25",
+    "time": "16:00",
+    "stadium": "СК Електрон",
+    "city": "Львів",
+    "category": "Суперліга",
+    "price_zones": {
+      "A": 400,
+      "B": 250,
+      "C": 100
+    },
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      }
+    ]
+  },
+  {
+    "id": "m5",
+    "sport": "🥊 Бокс",
+    "home": "Олександр Усик",
+    "away": "Даніель Дюбуа",
+    "date": "2025-07-05",
+    "time": "20:00",
+    "stadium": "Палац Україна",
+    "city": "Київ",
+    "category": "Чемпіонат світу WBA",
+    "price_zones": {
+      "A": 2000,
+      "B": 1200,
+      "C": 600
+    },
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      }
+    ]
+  },
+  {
+    "id": "m6",
+    "sport": "🎾 Теніс",
+    "home": "Еліна Світоліна",
+    "away": "Ірина Бегу",
+    "date": "2025-07-10",
+    "time": "14:00",
+    "stadium": "Тенісний центр",
+    "city": "Одеса",
+    "category": "WTA 250",
+    "price_zones": {
+      "A": 500,
+      "B": 300,
+      "C": 120
+    },
+    "seats": [
+      {
+        "id": "A1",
+        "row": "A",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "A2",
+        "row": "A",
+        "number": 2,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A3",
+        "row": "A",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A4",
+        "row": "A",
+        "number": 4,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "A5",
+        "row": "A",
+        "number": 5,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B1",
+        "row": "B",
+        "number": 1,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B2",
+        "row": "B",
+        "number": 2,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B3",
+        "row": "B",
+        "number": 3,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "B4",
+        "row": "B",
+        "number": 4,
+        "zone": "A",
+        "booked": false
+      },
+      {
+        "id": "B5",
+        "row": "B",
+        "number": 5,
+        "zone": "A",
+        "booked": true
+      },
+      {
+        "id": "C1",
+        "row": "C",
+        "number": 1,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C2",
+        "row": "C",
+        "number": 2,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "C3",
+        "row": "C",
+        "number": 3,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C4",
+        "row": "C",
+        "number": 4,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "C5",
+        "row": "C",
+        "number": 5,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D1",
+        "row": "D",
+        "number": 1,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D2",
+        "row": "D",
+        "number": 2,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "D3",
+        "row": "D",
+        "number": 3,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D4",
+        "row": "D",
+        "number": 4,
+        "zone": "B",
+        "booked": false
+      },
+      {
+        "id": "D5",
+        "row": "D",
+        "number": 5,
+        "zone": "B",
+        "booked": true
+      },
+      {
+        "id": "E1",
+        "row": "E",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E2",
+        "row": "E",
+        "number": 2,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E3",
+        "row": "E",
+        "number": 3,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "E4",
+        "row": "E",
+        "number": 4,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "E5",
+        "row": "E",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F1",
+        "row": "F",
+        "number": 1,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F2",
+        "row": "F",
+        "number": 2,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F3",
+        "row": "F",
+        "number": 3,
+        "zone": "C",
+        "booked": true
+      },
+      {
+        "id": "F4",
+        "row": "F",
+        "number": 4,
+        "zone": "C",
+        "booked": false
+      },
+      {
+        "id": "F5",
+        "row": "F",
+        "number": 5,
+        "zone": "C",
+        "booked": false
+      }
+    ]
+  }
+]
