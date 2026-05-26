@@ -43,14 +43,14 @@
         "row": "A",
         "number": 5,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "A6",
         "row": "A",
         "number": 6,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "A7",
@@ -92,7 +92,7 @@
         "row": "B",
         "number": 4,
         "zone": "A",
-        "booked": true
+        "booked": false
       },
       {
         "id": "B5",
@@ -113,14 +113,14 @@
         "row": "B",
         "number": 7,
         "zone": "A",
-        "booked": true
+        "booked": false
       },
       {
         "id": "B8",
         "row": "B",
         "number": 8,
         "zone": "A",
-        "booked": true
+        "booked": false
       },
       {
         "id": "C1",
@@ -363,6 +363,11 @@
     "stadium": "Палац спорту",
     "city": "Київ",
     "category": "Суперліга",
+    "price_zones": {
+      "A": 600,
+      "B": 350,
+      "C": 150
+    },
     "seats": [
       {
         "id": "A1",
@@ -425,7 +430,7 @@
         "row": "B",
         "number": 4,
         "zone": "A",
-        "booked": true
+        "booked": false
       },
       {
         "id": "B5",
@@ -574,12 +579,7 @@
         "zone": "C",
         "booked": false
       }
-    ],
-    "price_zones": {
-      "A": 600,
-      "B": 350,
-      "C": 150
-    }
+    ]
   },
   {
     "id": "m3",

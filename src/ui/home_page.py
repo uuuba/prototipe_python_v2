@@ -3,6 +3,7 @@ from src.core.config import (ACCENT, ACCENT2, CARD, CARD2, BORDER,
                               TEXT, MUTED, SUCCESS, ZONE_COLORS)
 from src.core.session import Session
 from src.services import match_service, booking_service
+from src.services.booking_service import MAX_SEATS_PER_USER_PER_MATCH
 
 
 def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
@@ -21,11 +22,25 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
         if not match:
             return
 
-        selected_seat = [None]
+        selected_seat  = [None]
         seat_info  = ft.Text("Оберіть місце на схемі", color=MUTED, size=13)
         result_txt = ft.Text("", size=13)
-        confirm    = ft.ElevatedButton(
-            "Забронювати", disabled=True,
+
+        booked_count = booking_service.get_user_match_booking_count(match_id, session.username)
+        remaining    = MAX_SEATS_PER_USER_PER_MATCH - booked_count
+
+        limit_row = ft.Row([
+            ft.Icon(ft.Icons.CONFIRMATION_NUMBER_OUTLINED, color=ACCENT2, size=15),
+            ft.Text(
+                f"Ваші місця: {booked_count}/{MAX_SEATS_PER_USER_PER_MATCH}  "
+                f"(залишилось: {remaining})",
+                size=12, color=ACCENT2 if remaining > 0 else "#ff4d6d",
+                weight=ft.FontWeight.W_500,
+            ),
+        ], spacing=4)
+
+        confirm = ft.ElevatedButton(
+            "Забронювати", disabled=(remaining == 0),
             style=ft.ButtonStyle(
                 bgcolor={ft.ControlState.DEFAULT: ACCENT,
                          ft.ControlState.DISABLED: "#1e2d45"},
@@ -58,7 +73,7 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
                                 return
                             selected_seat[0] = s.id
                             price = match.price_zones[s.zone]
-                            seat_info.value  = (
+                            seat_info.value = (
                                 f"Обране: ряд {s.row}, місце {s.number} · "
                                 f"Зона {s.zone} · {price} грн"
                             )
@@ -71,7 +86,7 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
 
                     cells.append(ft.Container(
                         width=22, height=22, border_radius=4,
-                        bgcolor=("#2d3748" if booked
+                        bgcolor=("2d3748" if booked
                                  else (color if is_sel else f"{color}33")),
                         border=ft.border.all(1, color if not booked else "#2d3748"),
                         tooltip=(f"Ряд {seat.row}, №{seat.number} — "
@@ -84,6 +99,7 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
         build_grid()
 
         def on_confirm(_):
+            nonlocal booked_count, remaining
             if not selected_seat[0]:
                 return
             ok, msg = booking_service.book_seat(
@@ -92,12 +108,22 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
             result_txt.color = SUCCESS if ok else "#ff4d6d"
             result_txt.value = f"{'✅' if ok else '❌'} {msg}"
             if ok:
-                confirm.disabled = True
+                booked_count = booking_service.get_user_match_booking_count(match_id, session.username)
+                remaining    = MAX_SEATS_PER_USER_PER_MATCH - booked_count
+                limit_row.controls[1].value = (
+                    f"Ваші місця: {booked_count}/{MAX_SEATS_PER_USER_PER_MATCH}  "
+                    f"(залишилось: {remaining})"
+                )
+                limit_row.controls[1].color = ACCENT2 if remaining > 0 else "#ff4d6d"
+                confirm.disabled = (remaining == 0)
                 selected_seat[0] = None
                 updated = match_service.get_by_id(match.id)
                 match.seats = updated.seats
                 build_grid()
-                seat_info.value = "Оберіть наступне місце або закрийте вікно"
+                seat_info.value = (
+                    "Оберіть наступне місце або закрийте вікно"
+                    if remaining > 0 else "Досягнуто ліміт місць для цього матчу"
+                )
                 seat_info.color = MUTED
             page.update()
 
@@ -133,6 +159,8 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
             ], spacing=2, tight=True),
             content=ft.Container(
                 content=ft.Column([
+                    limit_row,
+                    ft.Divider(height=4, color=BORDER),
                     ft.Text("Схема залу", size=13, color=TEXT,
                             weight=ft.FontWeight.BOLD),
                     ft.Container(
@@ -150,7 +178,7 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
                     ft.Divider(height=4, color=BORDER),
                     seat_info, result_txt,
                 ], spacing=8, scroll=ft.ScrollMode.AUTO),
-                width=460, height=420,
+                width=460, height=440,
             ),
             actions=[
                 ft.TextButton("Закрити",
@@ -174,37 +202,39 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
         return ft.Container(
             content=ft.Column([
                 ft.Row([
-                    ft.Text(match.sport, size=13, color=ACCENT,
+                    ft.Text(match.sport, size=12, color=ACCENT,
                             weight=ft.FontWeight.W_600),
                     ft.Container(
-                        content=ft.Text(match.category, size=11, color=MUTED),
+                        content=ft.Text(match.category, size=10, color=MUTED),
                         bgcolor="#1e2d45", border_radius=20,
                         padding=ft.padding.symmetric(horizontal=8, vertical=3),
                     ),
                 ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-                ft.Text(f"{match.home} vs {match.away}", size=17,
-                        weight=ft.FontWeight.BOLD, color=TEXT, font_family="Rajdhani"),
+                ft.Text(f"{match.home} vs {match.away}", size=15,
+                        weight=ft.FontWeight.BOLD, color=TEXT, font_family="Rajdhani",
+                        max_lines=2, overflow=ft.TextOverflow.ELLIPSIS),
                 ft.Row([
-                    ft.Text(f"📅 {match.date}", size=12, color=MUTED),
-                    ft.Text(f"🕐 {match.time}", size=12, color=MUTED),
-                    ft.Text(f"📍 {match.city}", size=12, color=MUTED),
-                ], spacing=12, wrap=True),
-                ft.Text(f"🏟 {match.stadium}", size=12, color=MUTED),
-                ft.Divider(height=8, color=BORDER),
+                    ft.Text(f"📅 {match.date}", size=11, color=MUTED),
+                    ft.Text(f"🕐 {match.time}", size=11, color=MUTED),
+                ], spacing=8, wrap=True),
+                ft.Text(f"📍 {match.city}", size=11, color=MUTED),
+                ft.Text(f"🏟 {match.stadium}", size=11, color=MUTED,
+                        max_lines=1, overflow=ft.TextOverflow.ELLIPSIS),
+                ft.Divider(height=6, color=BORDER),
                 ft.Row([
                     ft.Column([
-                        ft.Text(f"Вільних місць: {free}/{total}", size=12, color=MUTED),
+                        ft.Text(f"Вільних: {free}/{total}", size=11, color=MUTED),
                         ft.Container(
                             content=ft.Container(
                                 bgcolor=bar_c, border_radius=4,
-                                width=180 * (1 - ratio), height=6,
+                                width=100 * (1 - ratio), height=5,
                             ),
-                            bgcolor=BORDER, border_radius=4, width=180, height=6,
+                            bgcolor=BORDER, border_radius=4, width=100, height=5,
                         ),
                     ], spacing=4),
                     ft.Column([
                         ft.Text("від", size=11, color=MUTED),
-                        ft.Text(f"{match.min_price} грн", size=16, color=ACCENT2,
+                        ft.Text(f"{match.min_price} грн", size=15, color=ACCENT2,
                                 weight=ft.FontWeight.BOLD, font_family="Rajdhani"),
                     ], horizontal_alignment=ft.CrossAxisAlignment.END, spacing=0),
                 ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
@@ -214,20 +244,21 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
                         bgcolor=ACCENT if free > 0 else "#1e2d45",
                         color="#0a0e1a" if free > 0 else MUTED,
                         shape=ft.RoundedRectangleBorder(radius=10),
-                        padding=ft.padding.symmetric(vertical=10),
+                        padding=ft.padding.symmetric(vertical=9),
                     ),
                     width=float("inf"), disabled=free == 0,
                     on_click=lambda _, mid=match.id: open_match_dialog(mid),
                 ),
-            ], spacing=8),
-            bgcolor=CARD, border_radius=16, padding=20,
+            ], spacing=7),
+            bgcolor=CARD, border_radius=16, padding=16,
             border=ft.border.all(1, BORDER),
             shadow=ft.BoxShadow(blur_radius=12, color="#00000050", offset=ft.Offset(0, 4)),
+            expand=True,
         )
 
 
     filter_row   = ft.Row([], spacing=8, scroll=ft.ScrollMode.AUTO)
-    matches_grid = ft.Column([], spacing=16)
+    matches_wrap = ft.Column([], spacing=12)
 
     def refresh_list():
         nonlocal all_matches
@@ -252,13 +283,29 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
                 animate=ft.Animation(150, ft.AnimationCurve.EASE_OUT),
             )
 
-        filter_row.controls   = [chip(s) for s in sports]
-        matches_grid.controls = [match_card(m) for m in filtered]
+        filter_row.controls = [chip(s) for s in sports]
+
+        # Розбиваємо по 2 картки в рядок
+        rows = []
+        for i in range(0, len(filtered), 2):
+            pair = filtered[i:i+2]
+            if len(pair) == 2:
+                row = ft.Row([
+                    ft.Container(content=match_card(pair[0]), expand=1),
+                    ft.Container(content=match_card(pair[1]), expand=1),
+                ], spacing=12, expand=True)
+            else:
+                row = ft.Row([
+                    ft.Container(content=match_card(pair[0]), expand=1),
+                    ft.Container(expand=1),  # порожній слот
+                ], spacing=12, expand=True)
+            rows.append(row)
+
+        matches_wrap.controls = rows
         page.update()
 
     refresh_list()
 
-    # ── Navbar з кнопкою профілю замість "Мої бронювання" ─────────────────────
     navbar = ft.Container(
         content=ft.Row([
             ft.Row([
@@ -272,7 +319,6 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
                         color=TEXT, font_family="Rajdhani"),
             ], spacing=8),
             ft.Row([
-                # Кнопка профілю — веде на /profile
                 ft.Container(
                     content=ft.Row([
                         ft.Icon(ft.Icons.PERSON, color=ACCENT, size=16),
@@ -301,7 +347,7 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
             ft.Divider(height=8, color="transparent"),
             filter_row,
             ft.Divider(height=4, color="transparent"),
-            ft.Column([matches_grid], scroll=ft.ScrollMode.AUTO, expand=True),
+            ft.Column([matches_wrap], scroll=ft.ScrollMode.AUTO, expand=True),
         ], spacing=10, expand=True),
         padding=ft.padding.symmetric(horizontal=24, vertical=20),
         expand=True,

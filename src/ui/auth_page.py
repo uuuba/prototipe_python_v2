@@ -5,7 +5,7 @@ from src.core.session import Session
 from src.services import auth_service
 
 _DANGER = "#ff4d6d"
-_EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+_EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 
 
 def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
@@ -30,6 +30,13 @@ def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
         color=TEXT, hint_style=ft.TextStyle(color=MUTED),
         bgcolor="#0d1520", border_radius=12, height=52,
     )
+    confirm_password_field = ft.TextField(
+        hint_text="Повторіть пароль", prefix_icon=ft.Icons.LOCK_OUTLINE,
+        password=True, can_reveal_password=True,
+        border_color=BORDER, focused_border_color=ACCENT,
+        color=TEXT, hint_style=ft.TextStyle(color=MUTED),
+        bgcolor="#0d1520", border_radius=12, height=52, visible=False,
+    )
     error_text    = ft.Text("", color=_DANGER, size=13, visible=False)
     title_text    = ft.Text("Вхід до системи", size=26, weight=ft.FontWeight.BOLD,
                             color=TEXT, font_family="Rajdhani")
@@ -42,6 +49,20 @@ def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
         error_text.value = msg
         error_text.visible = True
         page.update()
+
+    def validate_email(email: str) -> tuple[bool, str]:
+        if not email:
+            return False, "Введіть email"
+        if "@" not in email:
+            return False, "Email має містити символ @"
+        local, _, domain = email.partition("@")
+        if not local:
+            return False, "Вкажіть ім'я перед символом @"
+        if "." not in domain:
+            return False, "Вкажіть домен (наприклад: gmail.com)"
+        if not _EMAIL_RE.match(email):
+            return False, "Невірний формат email"
+        return True, ""
 
     def submit(_):
         error_text.visible = False
@@ -69,12 +90,19 @@ def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
                 show_error(result)
         else:
             email = email_field.value.strip()
-            if not email:
-                show_error("Введіть email")
+            ok_email, email_err = validate_email(email)
+            if not ok_email:
+                show_error(email_err)
                 return
-            if not _EMAIL_RE.match(email):
-                show_error("Невірний формат email")
+
+            confirm_pw = confirm_password_field.value.strip()
+            if not confirm_pw:
+                show_error("Підтвердіть пароль")
                 return
+            if password != confirm_pw:
+                show_error("Паролі не співпадають")
+                return
+
             ok, msg = auth_service.register(username, password, email)
             if ok:
                 _, user = auth_service.login(username, password)
@@ -92,8 +120,10 @@ def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
         submit_label.value  = "Увійти" if login else "Зареєструватись"
         toggle_label.value  = ("Немає акаунту? Зареєструватись" if login
                                else "Вже маєте акаунт? Увійти")
-        email_field.visible = not login
+        email_field.visible            = not login
+        confirm_password_field.visible = not login
         username_field.value = email_field.value = password_field.value = ""
+        confirm_password_field.value = ""
         error_text.visible = False
         page.update()
 
@@ -129,7 +159,7 @@ def AuthPage(page: ft.Page, session: Session, navigate) -> ft.Control:
             ft.Divider(height=20, color="transparent"),
             title_text, subtitle_text,
             ft.Divider(height=16, color="transparent"),
-            username_field, email_field, password_field,
+            username_field, email_field, password_field, confirm_password_field,
             ft.Divider(height=4, color="transparent"),
             error_text,
             ft.Divider(height=4, color="transparent"),
