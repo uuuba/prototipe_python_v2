@@ -69,19 +69,24 @@ def HomePage(page: ft.Page, session: Session, navigate) -> ft.Control:
 
                     def make_click(s=seat):
                         def on_click(_):
-                            if s.booked:
+                            if remaining == 0:
+                                result_txt.value = "❌ Ліміт досягнуто: максимум 3 місця на одну особу"
+                                result_txt.color = "#ff4d6d"
+                                page.update()
                                 return
+
                             selected_seat[0] = s.id
                             price = match.price_zones[s.zone]
                             seat_info.value = (
                                 f"Обране: ряд {s.row}, місце {s.number} · "
                                 f"Зона {s.zone} · {price} грн"
                             )
-                            seat_info.color  = ZONE_COLORS[s.zone]
+                            seat_info.color = ZONE_COLORS[s.zone]
                             confirm.disabled = False
                             result_txt.value = ""
                             build_grid()
                             page.update()
+
                         return on_click
 
                     cells.append(ft.Container(

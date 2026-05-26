@@ -12,7 +12,10 @@ def load_json(path: str) -> list | dict:
     if not os.path.exists(path):
         return []
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        content = f.read().strip()
+        if not content:
+            return []
+        return json.loads(content)
 
 
 def save_json(path: str, data: list | dict) -> None:

@@ -15,7 +15,7 @@
         "row": "A",
         "number": 1,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "A2",
@@ -71,7 +71,7 @@
         "row": "B",
         "number": 1,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "B2",
@@ -363,18 +363,13 @@
     "stadium": "Палац спорту",
     "city": "Київ",
     "category": "Суперліга",
-    "price_zones": {
-      "A": 600,
-      "B": 350,
-      "C": 150
-    },
     "seats": [
       {
         "id": "A1",
         "row": "A",
         "number": 1,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "A2",
@@ -416,7 +411,7 @@
         "row": "B",
         "number": 2,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "B3",
@@ -430,7 +425,7 @@
         "row": "B",
         "number": 4,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "B5",
@@ -579,7 +574,12 @@
         "zone": "C",
         "booked": false
       }
-    ]
+    ],
+    "price_zones": {
+      "A": 600,
+      "B": 350,
+      "C": 150
+    }
   },
   {
     "id": "m3",
@@ -945,18 +945,13 @@
     "stadium": "СК Електрон",
     "city": "Львів",
     "category": "Суперліга",
-    "price_zones": {
-      "A": 400,
-      "B": 250,
-      "C": 100
-    },
     "seats": [
       {
         "id": "A1",
         "row": "A",
         "number": 1,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "A2",
@@ -991,14 +986,14 @@
         "row": "B",
         "number": 1,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "B2",
         "row": "B",
         "number": 2,
         "zone": "A",
-        "booked": false
+        "booked": true
       },
       {
         "id": "B3",
@@ -1161,7 +1156,12 @@
         "zone": "C",
         "booked": false
       }
-    ]
+    ],
+    "price_zones": {
+      "A": 400,
+      "B": 250,
+      "C": 100
+    }
   },
   {
     "id": "m5",

@@ -2,7 +2,13 @@
   {
     "username": "123123",
     "password": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
-    "email": "ivskiv@gmail.com",
-    "created_at": "2026-05-25T21:40:48.756319"
+    "email": "1231232@gmail.com",
+    "created_at": "2026-05-26T10:37:15.062912"
+  },
+  {
+    "username": "admin",
+    "password": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
+    "email": "123@gmail.com",
+    "created_at": "2026-05-26T10:44:05.852241"
   }
 ]

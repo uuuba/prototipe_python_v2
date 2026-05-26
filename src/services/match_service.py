@@ -45,7 +45,8 @@ _SEED: list[dict] = [
 
 def _ensure_matches() -> None:
     import os
-    if not os.path.exists(MATCHES_FILE):
+    raw = load_json(MATCHES_FILE)
+    if not raw:
         data = [{**m, "seats": _gen_seats(50 if "Футбол" in m["sport"] else 30)}
                 for m in _SEED]
         save_json(MATCHES_FILE, data)

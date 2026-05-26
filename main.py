@@ -4,7 +4,7 @@ from src.ui.auth_page import AuthPage
 from src.ui.home_page import HomePage
 from src.ui.my_bookings_page import MyBookingsPage
 from src.ui.profile_page import ProfilePage
-# from src.ui import AdminPage
+from src.ui.admin_page import AdminPage
 
 
 def main(page: ft.Page) -> None:
@@ -25,6 +25,7 @@ def main(page: ft.Page) -> None:
         "/home":        lambda: HomePage(page, session, navigate),
         "/my-bookings": lambda: MyBookingsPage(page, session, navigate),
         "/profile":     lambda: ProfilePage(page, session, navigate),
+        "/admin": lambda: AdminPage(page, session, navigate),
     }
 
     def navigate(route: str) -> None:
